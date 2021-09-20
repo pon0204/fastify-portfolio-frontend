@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Top = () => {
   return (
     <div>
-      <div className='text-center p-10'>
+      <div className='text-center p-28'>
         <h2 className='text-4xl mb-8'>Empty Room</h2>
         <p className='text-2xl mb-8'>「貴方の考えを、徹底的に深堀りする」</p>
         <div className='w-96  mx-auto mb-8'>

@@ -11,7 +11,7 @@ const InputForm = () => {
 
   return (
     <div className='h-full relative'>
-      <textarea className='h-full w-full bg-gray-100 p-4' 
+      <textarea className='h-full w-full bg-gray-100 p-4' placeholder='考えを入力' 
       onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => dispatch(setEditedChat(event.target.value))}
         />
       {
