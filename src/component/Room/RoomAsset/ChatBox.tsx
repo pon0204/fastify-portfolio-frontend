@@ -3,28 +3,28 @@ import Avatar from './Avatar'
 import SpeechBallon from './SpeechBallon'
 
 interface props {
-  userName: string
-  direction: string,
+  isMe: boolean
   text: string
 }
 
 const ChatBox:FC<props> = (props) => {
   return (
     <div>
-      {props.direction === 'left' ?
-      <div className='flex  justify-start'>
-        <div className='flex mb-8'>
-          <Avatar userName={props.userName}/>
-          <SpeechBallon text={props.text}/>
-        </div>
-      </div>
-      :
+      {props.isMe ?
       <div className='flex  justify-end'>
         <div className='flex mb-8'>
           <SpeechBallon text={props.text}/>
-          <Avatar userName={props.userName}/>
+          <Avatar userName={'自分'}/>
         </div>
       </div>
+      :
+      <div className='flex  justify-start'>
+        <div className='flex mb-8'>
+          <Avatar userName={'相手'}/>
+          <SpeechBallon text={props.text}/>
+        </div>
+      </div>
+
       }
     </div>
   )

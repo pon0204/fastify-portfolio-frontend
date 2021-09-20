@@ -1,4 +1,5 @@
 import React,{ FC } from 'react'
+import defaultPhoto from '../../../image/profile_default.png'
 
 interface props {
   userName : string
@@ -7,7 +8,7 @@ interface props {
 const Avatar:FC<props> = ({userName}) => {
   return (
     <div>
-      <div className='rounded-full w-16 h-16 bg-indigo-200'/>
+        <img src={defaultPhoto} className="rounded-full w-16 h-16 bg-indigo-200" alt=""/>
       <p className='text-center text-sm'>{userName}</p>
     </div>
   )

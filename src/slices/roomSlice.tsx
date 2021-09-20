@@ -9,10 +9,18 @@ export interface chatState {
 
 const initialState:any = {
   chat: [
+    {
+    isMe : true,
+    text: 'テキスト1'
+    },
+    {
+    isMe : false,
+    text: 'テキスト2'
+    },
   ],
   editedChat: {
     isMe: true,
-    text: ''
+    text: 'テキスト'
   }
 }
 
@@ -20,13 +28,13 @@ export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    setChat: (state,action: PayloadAction<any>) => {
-      state.chat = [...state.chat,state.editedChat]
+    setChat: (state, action: PayloadAction) => {
+      state.chat = action.payload
     },
-    setEditedChat: (state,action: PayloadAction<string>) => {
-      state.editedChat.text = action.payload
+    setEditedChat: (state,action: PayloadAction) => {
+      state.editedChat = action.payload
     },
-    setEditedIsMe: (state) => {
+    setEditedIsMe: (state,action: PayloadAction) => {
       state.editedChat.isMe = !state.editedChat.isMe
     }
 }

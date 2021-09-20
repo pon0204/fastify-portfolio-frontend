@@ -1,7 +1,8 @@
 export interface Chat {
   userName: string,
-  direction: string,
-  text: string
+  text: string,
+  isMe: boolean
+
 }
 export interface Chats {
   chats: Chat[]
