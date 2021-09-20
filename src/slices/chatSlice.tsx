@@ -26,13 +26,16 @@ export const chatSlice = createSlice({
     setEditedChat: (state,action: PayloadAction<string>) => {
       state.editedChat.text = action.payload
     },
+    resetEditedChat: (state) => {
+      state.editedChat.text = ''
+    },
     setEditedIsMe: (state) => {
       state.editedChat.isMe = !state.editedChat.isMe
-    }
+    },
 }
 })
 
-export const { setChat, setEditedChat,setEditedIsMe } = chatSlice.actions
+export const { setChat, setEditedChat,setEditedIsMe,resetEditedChat } = chatSlice.actions
 export const selectChat = (state: RootState) => state.chat.chat
 export const selectEditedChat = (state: RootState) => state.chat.editedChat
 export default chatSlice.reducer
