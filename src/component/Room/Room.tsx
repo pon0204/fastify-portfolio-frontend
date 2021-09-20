@@ -30,7 +30,7 @@ const Room = () => {
         <ChatBox isMe={chat.isMe} text={chat.text} key={index}/>
       ))
       }
-      <div className='fixed border h-32 w-11/12 rounded-md bottom-20 left-1/2 transform -translate-x-1/2'>
+      <div className='fixed border h-32 w-11/12 rounded-md bottom-24 left-1/2 transform -translate-x-1/2'>
         <UserSelectTabs/>
         <InputForm/>
         <div className='h-4 bg-white'/>
