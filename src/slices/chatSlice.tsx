@@ -20,7 +20,7 @@ export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    setChat: (state,action: PayloadAction<any>) => {
+    setChat: (state) => {
       state.chat = [...state.chat,state.editedChat]
     },
     setEditedChat: (state,action: PayloadAction<string>) => {

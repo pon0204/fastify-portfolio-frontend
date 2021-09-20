@@ -22,7 +22,7 @@ const InputForm = () => {
       :
         <button className='rounded-full bg-blue-700 w-12 h-12 absolute right-6 bottom-6 text-white'
         onClick={() => {
-          dispatch(setChat(''))
+          dispatch(setChat())
           dispatch(resetEditedChat())
           }
         }
