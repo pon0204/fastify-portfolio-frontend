@@ -40,6 +40,7 @@ const App = () => {
             </Switch>
           </Layout>
         </BrowserRouter>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </div>
   );

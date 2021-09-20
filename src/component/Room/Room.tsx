@@ -1,29 +1,17 @@
 import React from 'react'
+import { useAppSelector } from '../../app/hooks'
+import { selectChat } from '../../slices/chatSlice'
+import { Chat } from '../../types/types'
 import ChatBox from './RoomAsset/ChatBox'
 
-const chatData = [
-  {
-    direction: 'left',
-    text: 'ほげい1'
-  },
-  {
-    direction: 'left',
-    text: 'ほげい2'
-  },
-  {
-    direction: 'right',
-    text: 'ほげい3'
-  },
-]
-
-console.log(chatData[0])
-
 const Room = () => {
+  const chatData = useAppSelector(selectChat)
+  
   return (
-    <div className='py-12 px-4 lg:px-20 '>
+    <div className='py-12 px-20'>
       {
-      chatData.map((chat,index) => (
-        <ChatBox direction={chat.direction} text={chat.text}/>
+      chatData.map((chat:Chat,index:number) => (
+        <ChatBox userName={chat.userName} direction={chat.direction} text={chat.text}/>
       ))
       }
     </div>
