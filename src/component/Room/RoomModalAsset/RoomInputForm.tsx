@@ -19,15 +19,15 @@ const RoomInputForm = () => {
         />
       <div className='flex text-center justify-center'>
         <div className='mx-20'>
-          <RoomFormFile isMe={true}/>
-          <input type='text' className='w-24 bg-gray-100 p-2 mx-auto block text-center' placeholder='自分' value={editedRoom.myName}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => dispatch(setEditedRoom({...editedRoom,myName: event.target.value}))}
-          />
-        </div>
-        <div className='mx-20'>
           <RoomFormFile isMe={false}/>
           <input type='text' className='w-24 bg-gray-100 p-2 mx-auto block text-center' placeholder='相手' value={editedRoom.partnerName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => dispatch(setEditedRoom({...editedRoom,partnerName: event.target.value}))}
+          />
+        </div>
+        <div className='mx-20'>
+          <RoomFormFile isMe={true}/>
+          <input type='text' className='w-24 bg-gray-100 p-2 mx-auto block text-center' placeholder='自分' value={editedRoom.myName}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => dispatch(setEditedRoom({...editedRoom,myName: event.target.value}))}
           />
         </div>
       </div>

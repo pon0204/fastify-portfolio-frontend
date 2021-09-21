@@ -14,13 +14,13 @@ const ChatBox:FC<props> = (props) => {
       <div className='flex  justify-end'>
         <div className='flex mb-4'>
           <SpeechBallon isMe={props.isMe} text={props.text}/>
-          <Avatar userName={'自分'}/>
+          <Avatar isMe={props.isMe}/>
         </div>
       </div>
       :
       <div className='flex  justify-start'>
         <div className='flex mb-4'>
-          <Avatar userName={'相手'}/>
+          <Avatar isMe={props.isMe}/>
           <SpeechBallon isMe={props.isMe} text={props.text}/>
         </div>
       </div>
