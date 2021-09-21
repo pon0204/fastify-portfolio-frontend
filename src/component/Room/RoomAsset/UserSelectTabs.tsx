@@ -12,7 +12,6 @@ export default function UserSelectTabs() {
 
   return (
     <div className='flex w-full h-20 bg-white'>
-      {/* <div className='w-1/2 border cursor-pointer'> */}
       <div 
       onClick={() => dispatch(setEditedIsMe(false))}
       className={'w-1/2 border cursor-pointer ' + (!editedChat.isMe && 'border-blue-600')}>
