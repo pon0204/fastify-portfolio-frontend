@@ -1,13 +1,16 @@
 import React,{ useEffect } from 'react'
 import { useAppSelector } from '../../app/hooks'
 import { selectChat } from '../../slices/chatSlice'
-import { Chat, Chats } from '../../types/types'
-import ChatBox from './RoomAsset/ChatBox'
-import InputForm from './RoomAsset/InputForm'
-import UserSelectTabs from './RoomAsset/UserSelectTabs'
+import { selectEditedRoom } from '../../slices/roomSlice'
+import { Chat, Chats, editedRoom } from '../../types/types'
+import ChatBox from './ChatAsset/ChatBox'
+import InputForm from './ChatAsset/InputForm'
+import RoomConfigModal from './RoomConfigModal'
+import UserSelectTabs from './ChatAsset/UserSelectTabs'
 
 const Room = () => {
   const chatData:Chat[] = useAppSelector(selectChat)
+  const editedRoom: editedRoom = useAppSelector(selectEditedRoom)
 
   const ScrollBottom = (target:HTMLElement) => {
     if (target) {
@@ -24,6 +27,9 @@ const Room = () => {
 
   return (
     <div className='pt-24 px-20'>
+      {editedRoom.title === '' &&
+        <RoomConfigModal/>
+      }
       <div className='fixed w-40 bg-red-500 p-4 text-white text-center font-bold top-1 right-4 text-md'>保 存</div>
       {
       chatData.map((chat:Chat,index:number) => (
