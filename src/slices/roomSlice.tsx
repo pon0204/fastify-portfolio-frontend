@@ -1,46 +1,30 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-// import { RootState } from '../app/store'
-// import { Chats,Chat } from '../types/types'
+import { RootState } from '../app/store'
+import { editedRoom } from '../types/types'
 
-// export interface chatState {
-//   chats: Chat[]
-//   editedChat: Chat
-// }
+export interface roomState {
+  editedRoom: editedRoom
+}
 
-// const initialState:chatState = {
-//   chats: [
-//     {
-//     isMe : true,
-//     text: 'テキスト1'
-//     },
-//     {
-//     isMe : false,
-//     text: 'テキスト2'
-//     },
-//   ],
-//   editedChat: {
-//     isMe: true,
-//     text: 'テキスト'
-//   }
-// }
+const initialState:roomState = {
+  editedRoom: {
+    title: '',
+    purpose: '',
+    myName: '',
+    partnerName: ''
+  }
+}
 
-// export const chatSlice = createSlice({
-//   name: 'chat',
-//   initialState,
-//   reducers: {
-//     setChat: (state, action: PayloadAction) => {
-//       state.chats = action.payload
-//     },
-//     setEditedChat: (state,action: PayloadAction) => {
-//       state.editedChat = action.payload
-//     },
-//     setEditedIsMe: (state,action: PayloadAction) => {
-//       state.editedChat.isMe = !state.editedChat.isMe
-//     }
-// }
-// })
+export const roomSlice = createSlice({
+  name: 'room',
+  initialState,
+  reducers: {
+    setEditedRoom: (state,action: PayloadAction<editedRoom>) => {
+      state.editedRoom = action.payload
+    },
+}
+})
 
-// export const { setChat, setEditedChat,setEditedIsMe } = chatSlice.actions
-// export const selectChat = (state: RootState) => state.chat.chats
-// export const selectEditedChat = (state: RootState) => state.chat.editedChat
-// export default chatSlice.reducer
+export const { setEditedRoom } = roomSlice.actions
+export const selectEditedRoom = (state: RootState) => state.room.editedRoom
+export default roomSlice.reducer
