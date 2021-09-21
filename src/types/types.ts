@@ -11,4 +11,8 @@ export interface editedRoom {
   purpose: string
   myName: string
   partnerName: string
+  myPhotoURL: string
+  partnerPhotoURL: string
+  // myPhoto:{name: string, lastModified: number}
+  // partnerPhoto:{name: string, lastModified: number}
 }

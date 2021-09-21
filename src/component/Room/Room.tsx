@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react'
-import { useAppSelector } from '../../app/hooks'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectChat } from '../../slices/chatSlice'
-import { selectEditedRoom } from '../../slices/roomSlice'
+import { selectEditedRoom, selectEditedRoomMode, setRoomEditMode } from '../../slices/roomSlice'
 import { Chat, Chats, editedRoom } from '../../types/types'
 import ChatBox from './ChatAsset/ChatBox'
 import InputForm from './ChatAsset/InputForm'
@@ -10,7 +10,8 @@ import UserSelectTabs from './ChatAsset/UserSelectTabs'
 
 const Room = () => {
   const chatData:Chat[] = useAppSelector(selectChat)
-  const editedRoom: editedRoom = useAppSelector(selectEditedRoom)
+  const RoomEditMode: boolean = useAppSelector(selectEditedRoomMode)
+  const dispatch = useAppDispatch()
 
   const ScrollBottom = (target:HTMLElement) => {
     if (target) {
@@ -27,10 +28,13 @@ const Room = () => {
 
   return (
     <div className='pt-24 px-20'>
-      {editedRoom.title === '' &&
+      {RoomEditMode &&
         <RoomConfigModal/>
       }
-      <div className='fixed w-40 bg-red-500 p-4 text-white text-center font-bold top-1 right-4 text-md'>保 存</div>
+      <div className='fixed top-1 right-4 flex gap-2'>
+        <button onClick={() => dispatch(setRoomEditMode(true))} className='w-40 bg-gray-400 p-4 text-white text-center font-bold text-md'>編 集</button>
+        <button className='w-40 bg-red-500 p-4 text-white text-center font-bold text-md'>保 存</button>
+      </div>
       {
       chatData.map((chat:Chat,index:number) => (
         <ChatBox isMe={chat.isMe} text={chat.text} key={index}/>
