@@ -9,7 +9,7 @@ import UserSelectTabs from './RoomAsset/UserSelectTabs'
 const Room = () => {
   const chatData = useAppSelector(selectChat)
 
-  const ScrollBottom = (target:any) => {
+  const ScrollBottom = (target:HTMLElement) => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "end" });
     }

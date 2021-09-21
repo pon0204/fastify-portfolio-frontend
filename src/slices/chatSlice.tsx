@@ -1,15 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { Chats,Chat } from '../types/types'
+import { Chat } from '../types/types'
 
 export interface chatState {
-  chat: Chats
+  chats: Chat[]
   editedChat: Chat
 }
 
-const initialState:any = {
-  chat: [
-  ],
+const initialState:chatState = {
+  chats: [],
   editedChat: {
     isMe: true,
     text: ''
@@ -21,7 +20,7 @@ export const chatSlice = createSlice({
   initialState,
   reducers: {
     setChat: (state) => {
-      state.chat = [...state.chat,state.editedChat]
+      state.chats = [...state.chats,state.editedChat]
     },
     setEditedChat: (state,action: PayloadAction<string>) => {
       state.editedChat.text = action.payload
@@ -39,6 +38,6 @@ export const chatSlice = createSlice({
 })
 
 export const { setChat, setEditedChat,setEditedIsMe, setEditedIsMeReverse,resetEditedChat } = chatSlice.actions
-export const selectChat = (state: RootState) => state.chat.chat
+export const selectChat = (state: RootState) => state.chat.chats
 export const selectEditedChat = (state: RootState) => state.chat.editedChat
 export default chatSlice.reducer

@@ -2,9 +2,7 @@ import React from 'react'
 import { Icon } from '@iconify/react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { resetEditedChat, selectEditedChat, setChat, setEditedChat, setEditedIsMeReverse } from '../../../slices/chatSlice';
-import { setEditedIsMe } from '../../../slices/roomSlice';
 
-// ユーザー1と2を切り替えるボタン
 
 const InputForm = () => {
   const dispatch = useAppDispatch()

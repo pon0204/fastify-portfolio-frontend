@@ -1,7 +1,6 @@
 export interface Chat {
-  userName: string,
-  text: string,
   isMe: boolean
+  text: string,
 
 }
 export interface Chats {
