@@ -7,7 +7,7 @@ import InputForm from './RoomAsset/InputForm'
 import UserSelectTabs from './RoomAsset/UserSelectTabs'
 
 const Room = () => {
-  const chatData = useAppSelector(selectChat)
+  const chatData:Chat[] = useAppSelector(selectChat)
 
   const ScrollBottom = (target:HTMLElement) => {
     if (target) {
