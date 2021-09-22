@@ -14,9 +14,9 @@ const InputForm = () => {
   const editedChat = useAppSelector(selectEditedChat)
 
   return (
-    <div className='h-full relative'>
+    <div className='relative h-full'>
       <textarea
-        className='h-full w-full bg-gray-100 p-4'
+        className='p-4 w-full h-full bg-gray-100'
         placeholder='考えを入力'
         value={editedChat.text}
         onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -24,16 +24,16 @@ const InputForm = () => {
         }
       />
       {!editedChat.text ? (
-        <button className='rounded-full bg-blue-700 opacity-30 w-12 h-12 absolute right-6 bottom-6 text-white'>
+        <button className='absolute bottom-6 right-6 w-12 h-12 text-white bg-blue-700 rounded-full opacity-30'>
           <Icon
             icon='heroicons-solid:paper-airplane'
             rotate={1}
-            className='text-2xl mx-auto'
+            className='mx-auto text-2xl'
           />
         </button>
       ) : (
         <button
-          className='rounded-full bg-blue-700 w-12 h-12 absolute right-6 bottom-6 text-white'
+          className='absolute bottom-6 right-6 w-12 h-12 text-white bg-blue-700 rounded-full'
           onClick={() => {
             dispatch(setChat())
             dispatch(resetEditedChat())
@@ -43,7 +43,7 @@ const InputForm = () => {
           <Icon
             icon='heroicons-solid:paper-airplane'
             rotate={1}
-            className='text-2xl mx-auto'
+            className='mx-auto text-2xl'
           />
         </button>
       )}

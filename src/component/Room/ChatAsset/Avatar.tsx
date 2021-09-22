@@ -15,7 +15,7 @@ const Avatar: VFC<props> = ({ isMe }) => {
     <div>
       <img
         src={imageURLJudge.imageURL(isMe)}
-        className='rounded-full w-16 h-16 bg-indigo-200 mb-1'
+        className='mb-1 w-16 h-16 bg-indigo-200 rounded-full'
         alt=''
       />
       <p className='text-center text-sm'>

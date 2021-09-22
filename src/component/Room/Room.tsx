@@ -26,12 +26,12 @@ const Room = () => {
   }, [chatData])
 
   return (
-    <div className='px-20 pt-40'>
+    <div className='pt-40 px-20'>
       {RoomEditMode && <RoomConfigModal />}
       {chatData.map((chat: Chat, index: number) => (
         <ChatBox isMe={chat.isMe} text={chat.text} key={index} />
       ))}
-      <div className='fixed border h-32 w-11/12 rounded-md bottom-24 left-1/2 transform -translate-x-1/2'>
+      <div className='fixed bottom-24 left-1/2 w-11/12 h-32 border rounded-md transform -translate-x-1/2'>
         <UserSelectTabs />
         <InputForm />
         <div className='h-4 bg-white' />

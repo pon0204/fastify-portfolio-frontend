@@ -12,21 +12,21 @@ const RoomInputForm = () => {
   const editedRoom = useAppSelector(selectEditedRoom)
 
   return (
-    <div className='h-full relative'>
+    <div className='relative h-full'>
       <h3 className='pl-10'>タイトル</h3>
       <input
         type='text'
-        className='w-11/12 bg-gray-100 p-4 mx-auto block my-2'
+        className='block mx-auto my-2 p-4 w-11/12 bg-gray-100'
         placeholder='アイディア壁打ち'
         value={editedRoom.title}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           dispatch(setEditedRoom({ ...editedRoom, title: event.target.value }))
         }
       />
-      <h3 className='pl-10 pb-1'>目的</h3>
+      <h3 className='pb-1 pl-10'>目的</h3>
       <input
         type='text'
-        className='w-11/12 bg-gray-100 p-4 mx-auto block'
+        className='block mx-auto p-4 w-11/12 bg-gray-100'
         placeholder='自分のアイディアを相手に説得出来るレベルまで考え抜く'
         value={editedRoom.purpose}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -35,12 +35,12 @@ const RoomInputForm = () => {
           )
         }
       />
-      <div className='flex text-center justify-center'>
+      <div className='flex justify-center text-center'>
         <div className='mx-20'>
           <RoomFormFile isMe={false} />
           <input
             type='text'
-            className='w-24 bg-gray-100 p-2 mx-auto block text-center'
+            className='block mx-auto p-2 w-24 text-center bg-gray-100'
             placeholder='相手'
             value={editedRoom.partnerName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -57,7 +57,7 @@ const RoomInputForm = () => {
           <RoomFormFile isMe={true} />
           <input
             type='text'
-            className='w-24 bg-gray-100 p-2 mx-auto block text-center'
+            className='block mx-auto p-2 w-24 text-center bg-gray-100'
             placeholder='自分'
             value={editedRoom.myName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -71,13 +71,13 @@ const RoomInputForm = () => {
       {editedRoom.title === '' || editedRoom.purpose === '' ? (
         <button
           disabled
-          className='bg-blue-700 opacity-60 w-24 h-16 absolute right-6 bottom-16 text-white'
+          className='absolute bottom-16 right-6 w-24 h-16 text-white bg-blue-700 opacity-60'
         >
           未入力有り
         </button>
       ) : (
         <button
-          className='bg-blue-700 w-24 h-16 absolute right-6 bottom-16 text-white'
+          className='absolute bottom-16 right-6 w-24 h-16 text-white bg-blue-700'
           onClick={() => dispatch(setRoomEditMode(false))}
         >
           保存

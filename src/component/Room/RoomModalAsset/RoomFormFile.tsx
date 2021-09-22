@@ -34,7 +34,7 @@ const RoomFormFile: VFC<props> = ({ isMe }) => {
     <div className='mb-2'>
       <label
         htmlFor={isMe ? 'FileMe' : 'FilePartner'}
-        className='relative block w-32 h-32 mx-auto mt-8 border-2 border-gray-300 rounded-full cursor-pointer'
+        className='relative block mt-8 mx-auto w-32 h-32 border-2 border-gray-300 rounded-full cursor-pointer'
       >
         <div className='relative'>
           <img
@@ -45,7 +45,7 @@ const RoomFormFile: VFC<props> = ({ isMe }) => {
           {!fileUrl && (
             <Icon
               icon='ic:baseline-add-a-photo'
-              className='absolute top-10 left-10 text-4xl bg-white opacity-80'
+              className='absolute left-10 top-10 text-4xl bg-white opacity-80'
             />
           )}
         </div>

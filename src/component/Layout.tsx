@@ -11,28 +11,28 @@ const Layout: FC = ({ children }) => {
   if (location.pathname === '/room') {
     return (
       <div>
-        <div className='h-16 bg-blue-600 flex fixed w-full justify-between'>
+        <div className='fixed flex justify-between w-full h-16 bg-blue-600'>
           <div className='flex items-center'>
-            <Link to='/' className='p-4 text-2xl text-white font-bold mr-4'>
+            <Link to='/' className='mr-4 p-4 text-white text-2xl font-bold'>
               Empty Room
             </Link>
-            <h2 className='text-white text-left text-xl'>
+            <h2 className='text-left text-white text-xl'>
               <span className='text-lg'>タイトル</span> : {editedRoom.title}
             </h2>
           </div>
           <div className='flex items-center'>
             <button
               onClick={() => dispatch(setRoomEditMode(true))}
-              className='w-40 bg-gray-400 p-4 text-white text-center font-bold text-md mx-2'
+              className='text-md mx-2 p-4 w-40 text-center text-white font-bold bg-gray-400'
             >
               編 集
             </button>
-            <button className='w-40 bg-red-500 p-4 text-white text-center font-bold text-md mx-2'>
+            <button className='text-md mx-2 p-4 w-40 text-center text-white font-bold bg-red-500'>
               保 存
             </button>
           </div>
         </div>
-        <div className='h4 bg-indigo-300 fixed top-16 w-full p-2'>
+        <div className='h4 fixed top-16 p-2 w-full bg-indigo-300'>
           【目的】{editedRoom.purpose}
         </div>
         <div>{children}</div>
@@ -42,8 +42,8 @@ const Layout: FC = ({ children }) => {
 
   return (
     <div>
-      <div className='h-16 bg-blue-600 flex fixed w-full justify-between'>
-        <Link to='/' className='p-4 text-2xl text-white font-bold mr-4'>
+      <div className='fixed flex justify-between w-full h-16 bg-blue-600'>
+        <Link to='/' className='mr-4 p-4 text-white text-2xl font-bold'>
           Empty Room
         </Link>
       </div>

@@ -9,11 +9,11 @@ const SpeechBallon: VFC<props> = (props) => {
   return (
     <div className='mx-4 pt-2'>
       {props.isMe ? (
-        <div className='w-96 bg-blue-500 p-4 text-white text-lg break-all'>
+        <div className='p-4 w-96 text-white break-all text-lg bg-blue-500'>
           {props.text}
         </div>
       ) : (
-        <div className='w-96 bg-gray-300 p-4 break-normal break-all'>
+        <div className='p-4 w-96 break-all break-normal bg-gray-300'>
           {props.text}
         </div>
       )}

@@ -19,10 +19,10 @@ export default function UserSelectTabs() {
           (!editedChat.isMe && 'border-blue-600')
         }
       >
-        <div className='mx-auto w-full pt-1 text-center'>
+        <div className='mx-auto pt-1 w-full text-center'>
           <img
             src={imageURLJudge.imageURL(false)}
-            className='rounded-full w-12 h-12 bg-indigo-200 mx-auto'
+            className='mx-auto w-12 h-12 bg-indigo-200 rounded-full'
             alt=''
           />
           <p>{editedRoom.partnerName}</p>
@@ -35,10 +35,10 @@ export default function UserSelectTabs() {
           (editedChat.isMe && 'border-blue-600')
         }
       >
-        <div className='mx-auto w-full pt-1 text-center'>
+        <div className='mx-auto pt-1 w-full text-center'>
           <img
             src={imageURLJudge.imageURL(true)}
-            className='rounded-full w-12 h-12 bg-indigo-200 mx-auto'
+            className='mx-auto w-12 h-12 bg-indigo-200 rounded-full'
             alt=''
           />
           <p className=''>{editedRoom.myName}</p>
