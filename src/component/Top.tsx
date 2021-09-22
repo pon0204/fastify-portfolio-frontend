@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 const Top = () => {
   return (
     <div>
-      <div className='text-center p-10'>
-        <h2 className='text-4xl mb-8'>Empty Room</h2>
-        <p className='text-2xl mb-8'>「貴方の考えを、徹底的に深堀りする」</p>
-        <div className='w-96  mx-auto mb-8'>
-          <Link to='/room' className='bg-blue-800 p-8 text-white text-2xl block'>
-              エンプティールーム作成する
+      <div className='p-28 text-center'>
+        <h2 className='mb-8 text-4xl'>Empty Room</h2>
+        <p className='mb-8 text-2xl'>「貴方の考えを、徹底的に深堀りする」</p>
+        <div className='mb-8 mx-auto w-96'>
+          <Link
+            to='/room'
+            className='block p-8 text-white text-2xl bg-blue-800'
+          >
+            エンプティールーム作成する
           </Link>
         </div>
         <h2 className='text-4xl'>サービス説明</h2>

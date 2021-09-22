@@ -1,36 +1,49 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { Chats } from '../types/types'
+import { Chat } from '../types/types'
 
 export interface chatState {
-  chat: Chats
+  chats: Chat[]
+  editedChat: Chat
 }
 
-const initialState:any = {
-  chat: [
-    {
-    userName: 'ユーザー1',
-    direction: 'left',
-    text: 'テキスト1'
-    },
-    {
-    userName: 'ユーザー2',
-    direction: 'right',
-    text: 'テキスト2'
-    },
-]
+const initialState: chatState = {
+  chats: [],
+  editedChat: {
+    isMe: true,
+    text: '',
+  },
 }
 
 export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    setChat: (state, action: PayloadAction) => {
-      state.chat = action.payload
+    setChat: (state) => {
+      state.chats = [...state.chats, state.editedChat]
     },
-}
+    setEditedChat: (state, action: PayloadAction<string>) => {
+      state.editedChat.text = action.payload
+    },
+    resetEditedChat: (state) => {
+      state.editedChat.text = ''
+    },
+    setEditedIsMe: (state, action: PayloadAction<boolean>) => {
+      state.editedChat.isMe = action.payload
+    },
+    setEditedIsMeReverse: (state) => {
+      state.editedChat.isMe = !state.editedChat.isMe
+    },
+  },
 })
 
-export const { setChat } = chatSlice.actions
-export const selectChat = (state: RootState) => state.chat.chat
+export const {
+  setChat,
+  setEditedChat,
+  setEditedIsMe,
+  setEditedIsMeReverse,
+  resetEditedChat,
+} = chatSlice.actions
+export const selectChat = (state: RootState) => state.chat.chats
+export const selectEditedChat = (state: RootState) => state.chat.editedChat
 export default chatSlice.reducer
