@@ -7,12 +7,12 @@ export interface chatState {
   editedChat: Chat
 }
 
-const initialState:chatState = {
+const initialState: chatState = {
   chats: [],
   editedChat: {
     isMe: true,
-    text: ''
-  }
+    text: '',
+  },
 }
 
 export const chatSlice = createSlice({
@@ -20,24 +20,30 @@ export const chatSlice = createSlice({
   initialState,
   reducers: {
     setChat: (state) => {
-      state.chats = [...state.chats,state.editedChat]
+      state.chats = [...state.chats, state.editedChat]
     },
-    setEditedChat: (state,action: PayloadAction<string>) => {
+    setEditedChat: (state, action: PayloadAction<string>) => {
       state.editedChat.text = action.payload
     },
     resetEditedChat: (state) => {
       state.editedChat.text = ''
     },
-    setEditedIsMe: (state,action: PayloadAction<boolean>) => {
+    setEditedIsMe: (state, action: PayloadAction<boolean>) => {
       state.editedChat.isMe = action.payload
     },
     setEditedIsMeReverse: (state) => {
       state.editedChat.isMe = !state.editedChat.isMe
     },
-}
+  },
 })
 
-export const { setChat, setEditedChat,setEditedIsMe, setEditedIsMeReverse,resetEditedChat } = chatSlice.actions
+export const {
+  setChat,
+  setEditedChat,
+  setEditedIsMe,
+  setEditedIsMeReverse,
+  resetEditedChat,
+} = chatSlice.actions
 export const selectChat = (state: RootState) => state.chat.chats
 export const selectEditedChat = (state: RootState) => state.chat.editedChat
 export default chatSlice.reducer

@@ -1,11 +1,11 @@
-import axios from 'axios';
-import { useEffect } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Layout from './Layout';
-import Room from './Room/Room';
-import Top from './Top';
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Layout from './Layout'
+import Room from './Room/Room'
+import Top from './Top'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,23 +18,21 @@ const queryClient = new QueryClient({
 
 const App = () => {
   useEffect(() => {
-    axios.get('http://localhost:3333/product')
-    .then((res)=>{
+    axios.get('http://localhost:3333/product').then((res) => {
       console.log(res.data)
     })
-
   }, [])
 
   return (
-    <div className="App">
+    <div className='App'>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Layout>
             <Switch>
-              <Route exact path="/">  
+              <Route exact path='/'>
                 <Top />
               </Route>
-              <Route exact path="/room">
+              <Route exact path='/room'>
                 <Room />
               </Route>
             </Switch>
@@ -43,7 +41,7 @@ const App = () => {
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
