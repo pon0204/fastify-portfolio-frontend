@@ -1,4 +1,4 @@
-import React,{ FC } from 'react'
+import React, { FC } from 'react'
 import Avatar from './Avatar'
 import SpeechBallon from './SpeechBallon'
 

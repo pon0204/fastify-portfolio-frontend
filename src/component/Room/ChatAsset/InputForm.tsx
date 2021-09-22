@@ -1,5 +1,5 @@
-import React from 'react'
 import { Icon } from '@iconify/react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { resetEditedChat, selectEditedChat, setChat, setEditedChat, setEditedIsMeReverse } from '../../../slices/chatSlice';
 

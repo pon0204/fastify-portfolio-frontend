@@ -1,12 +1,12 @@
-import React,{ useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useAppSelector } from '../../app/hooks'
 import { selectChat } from '../../slices/chatSlice'
 import { selectEditedRoomMode } from '../../slices/roomSlice'
 import { Chat } from '../../types/types'
 import ChatBox from './ChatAsset/ChatBox'
 import InputForm from './ChatAsset/InputForm'
-import RoomConfigModal from './RoomConfigModal'
 import UserSelectTabs from './ChatAsset/UserSelectTabs'
+import RoomConfigModal from './RoomConfigModal'
 
 const Room = () => {
   const chatData:Chat[] = useAppSelector(selectChat)

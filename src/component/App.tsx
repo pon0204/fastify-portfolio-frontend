@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import axios from 'axios';
+import { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from './Layout';
-import Top from './Top';
 import Room from './Room/Room';
+import Top from './Top';
 
 const queryClient = new QueryClient({
   defaultOptions: {

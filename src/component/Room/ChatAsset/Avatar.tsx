@@ -1,4 +1,4 @@
-import React,{ VFC } from 'react'
+import React, { VFC } from 'react'
 import { useAppSelector } from '../../../app/hooks'
 import { useImageURLJudge } from '../../../hooks/useImageURLJudge'
 import { selectEditedRoom } from '../../../slices/roomSlice'

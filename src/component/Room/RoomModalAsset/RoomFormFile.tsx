@@ -1,6 +1,5 @@
 // import AddAPhotoIcon from '@material-ui/icons/AddAPhoto'
 import { Icon } from '@iconify/react'
-import imageCompression from 'browser-image-compression'
 import React, { useState, VFC } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { selectEditedRoom, setEditedRoom } from '../../../slices/roomSlice'

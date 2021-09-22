@@ -1,12 +1,8 @@
-import React, { useEffect,useState} from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { selectEditedChat, setEditedIsMe } from '../../../slices/chatSlice';
-import defaultPhoto from '../../../image/profile_default.png'
-import { selectEditedRoom } from '../../../slices/roomSlice';
 import { useImageURLJudge } from '../../../hooks/useImageURLJudge';
+import { selectEditedChat, setEditedIsMe } from '../../../slices/chatSlice';
+import { selectEditedRoom } from '../../../slices/roomSlice';
 
 export default function UserSelectTabs() {
   const dispatch = useAppDispatch()
