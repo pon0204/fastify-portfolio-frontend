@@ -16,3 +16,13 @@ export interface editedRoom {
   // myPhoto:{name: string, lastModified: number}
   // partnerPhoto:{name: string, lastModified: number}
 }
+
+export interface Room {
+  room: {
+    title: string
+    purpose: string
+    myName: string
+    partnerName: string
+    chat: string
+  }
+}
