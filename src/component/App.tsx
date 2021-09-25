@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -17,12 +16,6 @@ const queryClient = new QueryClient({
 })
 
 const App = () => {
-  useEffect(() => {
-    axios.get('http://localhost:3333/product').then((res) => {
-      console.log(res.data)
-    })
-  }, [])
-
   return (
     <div className='App'>
       <QueryClientProvider client={queryClient}>
