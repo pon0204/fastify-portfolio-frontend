@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from './Layout'
 import Room from './Room/Room'
+import RoomSearch from './Room/RoomSearch'
 import Top from './Top'
 
 const queryClient = new QueryClient({
@@ -25,9 +26,10 @@ const App = () => {
               <Route exact path='/'>
                 <Top />
               </Route>
-              <Route exact path='/room'>
+              <Route exact path='/room/create'>
                 <Room />
               </Route>
+              <Route exact path='/room/search/:roomId' component={RoomSearch} />
             </Switch>
           </Layout>
         </BrowserRouter>

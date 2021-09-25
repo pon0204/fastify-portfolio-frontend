@@ -22,6 +22,9 @@ export const chatSlice = createSlice({
     setChat: (state) => {
       state.chats = [...state.chats, state.editedChat]
     },
+    setChats: (state, action: PayloadAction<any>) => {
+      state.chats = action.payload
+    },
     setEditedChat: (state, action: PayloadAction<string>) => {
       state.editedChat.text = action.payload
     },
@@ -39,6 +42,7 @@ export const chatSlice = createSlice({
 
 export const {
   setChat,
+  setChats,
   setEditedChat,
   setEditedIsMe,
   setEditedIsMeReverse,

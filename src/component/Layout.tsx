@@ -8,7 +8,7 @@ const Layout: FC = ({ children }) => {
   const editedRoom = useAppSelector(selectEditedRoom)
   const location = useLocation()
 
-  if (location.pathname === '/room') {
+  if (location.pathname.match('/room')) {
     return (
       <div>
         <div className='fixed flex justify-between w-full h-16 bg-blue-600'>

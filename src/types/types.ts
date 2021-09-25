@@ -19,10 +19,13 @@ export interface editedRoom {
 
 export interface Room {
   room: {
+    uuid: string
     title: string
     purpose: string
     myName: string
     partnerName: string
     chat: string
+    createdAt: string
+    updatedAt: string
   }
 }
