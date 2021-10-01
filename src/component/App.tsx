@@ -1,10 +1,10 @@
-import axios from 'axios'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from './Layout'
 import Room from './Room/Room'
+import RoomSearch from './Room/RoomSearch'
 import Top from './Top'
 
 const queryClient = new QueryClient({
@@ -17,12 +17,6 @@ const queryClient = new QueryClient({
 })
 
 const App = () => {
-  useEffect(() => {
-    axios.get('http://localhost:3333/product').then((res) => {
-      console.log(res.data)
-    })
-  }, [])
-
   return (
     <div className='App'>
       <QueryClientProvider client={queryClient}>
@@ -32,9 +26,10 @@ const App = () => {
               <Route exact path='/'>
                 <Top />
               </Route>
-              <Route exact path='/room'>
+              <Route exact path='/room/create'>
                 <Room />
               </Route>
+              <Route exact path='/room/search/:roomId' component={RoomSearch} />
             </Switch>
           </Layout>
         </BrowserRouter>

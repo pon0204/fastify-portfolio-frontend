@@ -1,14 +1,16 @@
 import React, { FC } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
+import { useMutateRoom } from '../hooks/useMutateRoom'
 import { selectEditedRoom, setRoomEditMode } from '../slices/roomSlice'
 
 const Layout: FC = ({ children }) => {
   const dispatch = useAppDispatch()
   const editedRoom = useAppSelector(selectEditedRoom)
   const location = useLocation()
+  const createRoomMutation = useMutateRoom()
 
-  if (location.pathname === '/room') {
+  if (location.pathname.match('/room')) {
     return (
       <div>
         <div className='fixed flex justify-between w-full h-16 bg-blue-600'>
@@ -27,7 +29,10 @@ const Layout: FC = ({ children }) => {
             >
               編 集
             </button>
-            <button className='text-md mx-2 p-4 w-40 text-center text-white font-bold bg-red-500'>
+            <button
+              onClick={() => createRoomMutation.mutate()}
+              className='text-md mx-2 p-4 w-40 text-center text-white font-bold bg-red-500'
+            >
               保 存
             </button>
           </div>

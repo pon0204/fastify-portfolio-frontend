@@ -9,7 +9,7 @@ const Top = () => {
         <p className='mb-8 text-2xl'>「貴方の考えを、徹底的に深堀りする」</p>
         <div className='mb-8 mx-auto w-96'>
           <Link
-            to='/room'
+            to='/room/create'
             className='block p-8 text-white text-2xl bg-blue-800'
           >
             エンプティールーム作成する
